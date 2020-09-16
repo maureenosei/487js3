@@ -1,5 +1,4 @@
 var slideIndex = 1;
-var htmlBuilder = "";
 
 function plusSlides(n) {
   showSlides((slideIndex += n));
@@ -33,6 +32,16 @@ function showSlides(n) {
     slides[i].style.display = "none";
   }
 
+  // building the dots
+  var dotDiv = document.getElementById("dotdiv");
+  var htmlBuilder = "<div style='text-align: center'>";
+  for (i = 0; i < slides.length; i++) {
+    htmlBuilder += "<span class='dot' onclick='currentSlide(" + i + ")></span>";
+  }
+
+  htmlBuilder += "</div>";
+  dotDiv.innerHTML = htmlBuilder;
+
   //changes the dots
 
   for (i = 0; i < dots.length; i++) {
@@ -42,13 +51,5 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " active";
 }
-
-htmlBuilder += "<div>";
-htmlBuilder += "<span class='dot' onclick ='currentSlide(1)'></span>";
-htmlBuilder += "<span class='dot' onclick ='currentSlide(2)'></span>";
-htmlBuilder += "<span class='dot' onclick ='currentSlide(3)'></span>";
-htmlBuilder += "</div>";
-
-document.getElementById("dotdiv").innerHTML = htmlBuilder;
 
 showSlides(slideIndex);
