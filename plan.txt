@@ -1,0 +1,21 @@
+Today:
+Understand how functions work when passing in variables
+Understand how to design a solution to a problem
+
+
+
+Open the js-slider-start files
+
+On page load
+    Hide all but first slide 
+    Hide text for all but first slide
+    adds buttons top page if needed
+
+When the user clicks Next nextSlide()
+    Fade out current slide. Fade in next slide
+
+When the user clicks Back previousSlide()
+    Fade out current slide. Fade in previous slide
+
+When the user is on the last slide and clicks Next
+    Fade out current slide. Go back to first slide
